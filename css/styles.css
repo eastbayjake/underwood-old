@@ -1,0 +1,48 @@
+#maintitle {
+  display: inline-block;
+  text-align: center;
+  font-size: 24pt;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-weight: bold;
+}
+#tagline {
+  display: inline-block;
+  text-align: center;
+  font-size: 16pt;
+  font-family: arial;
+  font-style: italic;
+}
+.legislator {
+  list-style-type: none;
+  height: 50px;
+  line-height: 50px;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 5px;
+  font-size: 28px;
+  text-align: center;
+}
+.legislator > span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  color: white;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-weight: bold;
+}
+.invisible {
+  background-color: white;
+}
+.Republican {
+  background-color: #b33535;
+}
+.Democratic {
+  background-color: #3574b3;
+}
+.Nonpartisan,
+.Independent,
+.Green {
+  background-color: #35b374;
+}

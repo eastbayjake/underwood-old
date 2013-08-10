@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="legList">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"></link>
+    <link href='http://fonts.googleapis.com/css?family=Cabin+Condensed:600' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <span id="maintitle">Underwood</span><br>
+      <span id="tagline">Less Counting. More Scheming.</span>
+    </div>
+    <div ng-controller="LegislatorController">
+      <div class="selectors">
+        <select ng-model="state">
+          <option ng-repeat="state in states" value={{state.abbreviation}}>{{state.name}}</option>
+        </select>
+        <select ng-model="chamber">
+          <option value="lower">House</option>
+          <option value="upper">Senate</option>
+        </select>
+      </div>
+      <div ng-repeat="legislator in legislators" ng-class="legislator.party" class="legislator" id='{{legislator.transparencydata_id}}'>
+        <span class="sortable invisible"></span>
+        <span class="sortable invisible"></span>
+        <span class="sortable">{{legislator.first_name}} {{legislator.last_name}}</span>
+        <span class="sortable invisible"></span>
+        <span class="sortable invisible"></span>
+      </div>
+    </div>
+  </body>
+</html>
