@@ -33,22 +33,20 @@
   font-family: 'Cabin Condensed', sans-serif;
   font-weight: bold;
 }
-.visible {
-  border: 1px solid black;
-}
-.invisible {
-  height: 50px;
-  width: 300px;
+.nonselected {
   border: 1px dashed black;
 }
 .Republican {
+  border: 1px solid black;
   background-color: #b33535;
 }
 .Democratic {
+  border: 1px solid black;
   background-color: #3574b3;
 }
 .Nonpartisan,
 .Independent,
 .Green {
+  border: 1px solid black;
   background-color: #35b374;
 }

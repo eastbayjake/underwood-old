@@ -17,6 +17,11 @@ app.controller('LegislatorController', function($scope, $http) {
     });
   }
 
+  $scope.selectVote = function() {
+    // Set all classes to "nonselected"
+    // Add "{{legislator:party}}" class
+  }
+
   //Get list of states to populate the dropdown menu
   $http({
     method: 'JSONP',

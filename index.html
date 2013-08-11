@@ -3,6 +3,9 @@
   <head>
     <link href="css/styles.css" rel="stylesheet" type="text/css"></link>
     <link href='http://fonts.googleapis.com/css?family=Cabin+Condensed:600' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/main.js"></script>
   </head>
   <body ng-app="underwood">
     <div class="header">
@@ -26,25 +29,13 @@
         <span class="votelabel">Lean Yes</span>
         <span class="votelabel">Yes</span>
       </div>
-      <div ng-repeat="legislator in legislators | orderBy:'last_name'" class="legislator" id='dragme'>
-        <span class="invisible"></span>
-        <span class="invisible"></span>
-        <span ng-class="legislator.party" class="visible">{{legislator.last_name}}</span>
-        <span class="invisible"></span>
-        <span class="invisible"></span>
+      <div ng-repeat="legislator in legislators | orderBy:'last_name'" ng-click="selectVote()" class="legislator">
+        <span class="nonselected"></span>
+        <span class="nonselected"></span>
+        <span class="{{legislator.party}}">{{legislator.last_name}}</span>
+        <span class="nonselected"></span>
+        <span class="nonselected"></span>
       </div>
     </div>
   </body>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-    $(document).ready(function() {
-      $("#dragme").draggable();
-      $("#dragme").droppable({tolerance: 'touch'});
-      $("#dragme").sortable();
-      $("#dragme").disableSelection();
-    });
-    </script>
 </html>
