@@ -12,28 +12,34 @@
   font-family: arial;
   font-style: italic;
 }
+.legislator > .votelabel {
+  color: black;
+}
 .legislator {
-  list-style-type: none;
+  /* Styling as needed */
+}
+.legislator > span {
+  display: inline-block;
   height: 50px;
   line-height: 50px;
-  width: 300px;
-  border: 1px solid black;
+  width: 192px;
   border-radius: 5px;
   margin: 0 auto;
   margin-top: 5px;
   font-size: 28px;
   text-align: center;
-}
-.legislator > span {
-  display: inline-block;
   vertical-align: middle;
-  line-height: normal;
   color: white;
   font-family: 'Cabin Condensed', sans-serif;
   font-weight: bold;
 }
+.visible {
+  border: 1px solid black;
+}
 .invisible {
-  background-color: white;
+  height: 50px;
+  width: 300px;
+  border: 1px dashed black;
 }
 .Republican {
   background-color: #b33535;

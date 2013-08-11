@@ -1,4 +1,4 @@
-var app = angular.module('legList', []);
+var app = angular.module('underwood', []);
 
 var apiKey = '3cdfa27b289e4d4090fd1b176c45e6cf';
 

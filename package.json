@@ -1,0 +1,8 @@
+{
+  "name": "yolo",
+  "version": "0.0.1",
+  "author": "yolo",
+  "scripts": {
+    "start": "nodemon ./app.js"
+  }
+}
