@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="underwood">
   <head>
     <link href="css/styles.css" rel="stylesheet" type="text/css"></link>
     <link href='http://fonts.googleapis.com/css?family=Cabin+Condensed:600' rel='stylesheet' type='text/css'>
@@ -7,7 +7,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/main.js"></script>
   </head>
-  <body ng-app="underwood">
+  <body>
     <div class="header">
       <span id="maintitle">Underwood</span><br>
       <span id="tagline">Less Counting. More Scheming.</span>
@@ -23,13 +23,13 @@
         </select>
       </div>
       <div class="legislator">
-        <span class="votelabel">No</span>
-        <span class="votelabel">Lean No</span>
-        <span class="votelabel">Undecided</span>
-        <span class="votelabel">Lean Yes</span>
-        <span class="votelabel">Yes</span>
+        <span class="votelabel">No: 0</span>
+        <span class="votelabel">Lean No: 0</span>
+        <span class="votelabel">Undecided: {{legislators.length}}</span>
+        <span class="votelabel">Lean Yes: 0</span>
+        <span class="votelabel">Yes: 0</span>
       </div>
-      <div ng-repeat="legislator in legislators | orderBy:'last_name'" ng-click="selectVote()" class="legislator">
+      <div ng-repeat="legislator in legislators | orderBy:'last_name'" ng-click="selected()" class="legislator">
         <span class="nonselected"></span>
         <span class="nonselected"></span>
         <span class="{{legislator.party}}">{{legislator.last_name}}</span>
