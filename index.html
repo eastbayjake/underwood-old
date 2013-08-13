@@ -5,6 +5,7 @@
     <link href='http://fonts.googleapis.com/css?family=Cabin+Condensed:600' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="js/main.js"></script>
   </head>
   <body>
@@ -25,16 +26,12 @@
       <div class="legislator">
         <span class="votelabel">No: 0</span>
         <span class="votelabel">Lean No: 0</span>
-        <span class="votelabel">Undecided: {{legislators.length}}</span>
+        <span class="votelabel">Undecided: {{undecidedCount}}</span>
         <span class="votelabel">Lean Yes: 0</span>
         <span class="votelabel">Yes: 0</span>
       </div>
-      <div ng-repeat="legislator in legislators | orderBy:'last_name'" ng-click="selected()" class="legislator">
-        <span class="nonselected"></span>
-        <span class="nonselected"></span>
-        <span class="{{legislator.party}}">{{legislator.last_name}}</span>
-        <span class="nonselected"></span>
-        <span class="nonselected"></span>
+      <div ng-repeat="legislator in legislators | orderBy:'last_name'" class="legislator" id="{{legislator.id}}" ng-click="changeVote({{legislator.id}})">
+        <span class="{{legislator.vote}} {{legislator.party}}">{{legislator.last_name}}</span>
       </div>
     </div>
   </body>
